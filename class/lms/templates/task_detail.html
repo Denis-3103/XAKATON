@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Task list{% endblock %}
+{% block content %}
+<div class="container">
+        <div class="alert alert-warning mt-3">
+
+            <h2>{{task.title}}</h2>
+
+            <p>{{task.content}}</p>
+        </div>
+  </div>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">ok</button>
+</form>
+
+{% endblock %}
